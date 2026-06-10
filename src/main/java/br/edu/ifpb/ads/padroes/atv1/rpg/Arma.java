@@ -1,6 +1,6 @@
 package br.edu.ifpb.ads.padroes.atv1.rpg;
 
-public class Arma {
+public class Arma implements Prototipo<Arma> {
 
     private String nome;
     private int dano;
@@ -22,5 +22,10 @@ public class Arma {
 
     public String getTipo() {
         return tipo;
+    }
+
+    @Override
+    public Arma copiar() {
+        return new Arma(nome, dano, tipo);
     }
 }

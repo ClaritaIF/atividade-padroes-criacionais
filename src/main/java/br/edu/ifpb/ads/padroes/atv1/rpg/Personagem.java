@@ -1,6 +1,6 @@
 package br.edu.ifpb.ads.padroes.atv1.rpg;
 
-public class Personagem {
+public class Personagem implements Prototipo<Personagem> {
 
     private String nome;
     private String raca;
@@ -27,7 +27,15 @@ public class Personagem {
         this.mana = mana;
         this.arma = arma;
         this.armadura = armadura;
-        this.habilidades = habilidades;
+        this.habilidades = habilidades.clone();
+    }
+
+    public Personagem(Personagem personagem) {
+        this(personagem.nome, personagem.raca, personagem.classe,
+                personagem.forca, personagem.inteligencia, personagem.agilidade,
+                personagem.vida, personagem.mana,
+                personagem.arma.copiar(), personagem.armadura.copiar(),
+                personagem.habilidades);
     }
 
     // Getters e Setters básicos
@@ -72,11 +80,16 @@ public class Personagem {
     }
 
     public String[] getHabilidades() {
-        return habilidades;
+        return habilidades.clone();
     }
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    @Override
+    public Personagem copiar() {
+        return new Personagem(this);
     }
 
     @Override

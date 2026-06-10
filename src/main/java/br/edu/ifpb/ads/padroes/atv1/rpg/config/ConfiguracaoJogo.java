@@ -2,10 +2,16 @@ package br.edu.ifpb.ads.padroes.atv1.rpg.config;
 
 public class ConfiguracaoJogo {
 
+    private static final ConfiguracaoJogo INSTANCIA = new ConfiguracaoJogo();
+
     private int nivelDificuldade;
 
-    public ConfiguracaoJogo() {
+    private ConfiguracaoJogo() {
         this.nivelDificuldade = 1;
+    }
+
+    public static ConfiguracaoJogo getInstancia() {
+        return INSTANCIA;
     }
 
     public int getNivelDificuldade() {

@@ -1,6 +1,6 @@
 package br.edu.ifpb.ads.padroes.atv1.rpg;
 
-public class Armadura {
+public class Armadura implements Prototipo<Armadura> {
 
     private String nome;
     private int defesa;
@@ -22,6 +22,11 @@ public class Armadura {
 
     public String getTipo() {
         return tipo;
+    }
+
+    @Override
+    public Armadura copiar() {
+        return new Armadura(nome, defesa, tipo);
     }
 
 }

@@ -1,5 +1,7 @@
 package br.edu.ifpb.ads.padroes.atv2;
 
+import java.util.Objects;
+
 public class ResultadoPagamento {
 
     private final String provedor;
@@ -8,10 +10,10 @@ public class ResultadoPagamento {
     private final String mensagem;
 
     public ResultadoPagamento(String provedor, String transacaoId, boolean aprovado, String mensagem) {
-        this.provedor = provedor;
-        this.transacaoId = transacaoId;
+        this.provedor = Objects.requireNonNull(provedor, "provedor deve ser informado");
+        this.transacaoId = Objects.requireNonNull(transacaoId, "transacaoId deve ser informado");
         this.aprovado = aprovado;
-        this.mensagem = mensagem;
+        this.mensagem = Objects.requireNonNull(mensagem, "mensagem deve ser informada");
     }
 
     public String getProvedor() {

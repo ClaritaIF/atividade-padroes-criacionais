@@ -2,9 +2,9 @@ package br.edu.ifpb.ads.padroes.atv1.rpg;
 
 public class Armadura implements Prototipo<Armadura> {
 
-    private String nome;
-    private int defesa;
-    private String tipo;
+    private final String nome;
+    private final int defesa;
+    private final String tipo;
 
     public Armadura(String nome, int defesa, String tipo) {
         this.nome = nome;

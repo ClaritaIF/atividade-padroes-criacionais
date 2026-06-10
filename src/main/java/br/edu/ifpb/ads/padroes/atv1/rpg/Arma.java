@@ -2,9 +2,9 @@ package br.edu.ifpb.ads.padroes.atv1.rpg;
 
 public class Arma implements Prototipo<Arma> {
 
-    private String nome;
-    private int dano;
-    private String tipo;
+    private final String nome;
+    private final int dano;
+    private final String tipo;
 
     public Arma(String nome, int dano, String tipo) {
         this.nome = nome;

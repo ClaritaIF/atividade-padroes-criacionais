@@ -3,16 +3,16 @@ package br.edu.ifpb.ads.padroes.atv1.rpg;
 public class Personagem implements Prototipo<Personagem> {
 
     private String nome;
-    private String raca;
-    private String classe;
-    private int forca;
-    private int inteligencia;
-    private int agilidade;
-    private int vida;
-    private int mana;
-    private Arma arma;
-    private Armadura armadura;
-    private String[] habilidades;
+    private final String raca;
+    private final String classe;
+    private final int forca;
+    private final int inteligencia;
+    private final int agilidade;
+    private final int vida;
+    private final int mana;
+    private final Arma arma;
+    private final Armadura armadura;
+    private final String[] habilidades;
 
     public Personagem(String nome, String raca, String classe, int forca,
                       int inteligencia, int agilidade, int vida, int mana,
@@ -38,7 +38,7 @@ public class Personagem implements Prototipo<Personagem> {
                 personagem.habilidades);
     }
 
-    // Getters e Setters básicos
+    // Mantem setNome para renomear clones criados pelo Prototype.
     public String getNome() {
         return nome;
     }
